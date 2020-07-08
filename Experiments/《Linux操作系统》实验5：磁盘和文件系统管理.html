@@ -1,0 +1,78 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- common.css -->
+      <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: -apple-system, Helvetica, Arial, sans-serif;margin: 0;padding: 20px;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;height: auto;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 90%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+      <!-- ace-static.css -->
+      <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+      <style>.ace-chrome .ace_gutter {background: #ebebeb;color: #333;overflow : hidden;}.ace-chrome .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-chrome {background-color: #FFFFFF;color: black;}.ace-chrome .ace_cursor {color: black;}.ace-chrome .ace_invisible {color: rgb(191, 191, 191);}.ace-chrome .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-chrome .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-chrome .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-chrome .ace_invalid {background-color: rgb(153, 0, 0);color: white;}.ace-chrome .ace_fold {}.ace-chrome .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-chrome .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-chrome .ace_support.ace_type,.ace-chrome .ace_support.ace_class.ace-chrome .ace_support.ace_other {color: rgb(109, 121, 222);}.ace-chrome .ace_variable.ace_parameter {font-style:italic;color:#FD971F;}.ace-chrome .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-chrome .ace_comment {color: #236e24;}.ace-chrome .ace_comment.ace_doc {color: #236e24;}.ace-chrome .ace_comment.ace_doc.ace_tag {color: #236e24;}.ace-chrome .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-chrome .ace_variable {color: rgb(49, 132, 149);}.ace-chrome .ace_xml-pe {color: rgb(104, 104, 91);}.ace-chrome .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-chrome .ace_heading {color: rgb(12, 7, 255);}.ace-chrome .ace_list {color:rgb(185, 6, 144);}.ace-chrome .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-chrome .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-chrome .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-chrome .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-chrome .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-chrome .ace_gutter-active-line {background-color : #dcdcdc;}.ace-chrome .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-chrome .ace_storage,.ace-chrome .ace_keyword,.ace-chrome .ace_meta.ace_tag {color: rgb(147, 15, 128);}.ace-chrome .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-chrome .ace_string {color: #1A1AA6;}.ace-chrome .ace_entity.ace_other.ace_attribute-name {color: #994409;}.ace-chrome .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}</style>
+      <!-- export.css -->
+      <style>
+        body{margin:0 auto;max-width:800px;line-height:1.4}
+        #nav{margin:5px 0 10px;font-size:15px}
+        #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+        #contentarea{font-size:15px;margin:16px 0}
+        .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+        .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+        .latex-cell{white-space:pre-wrap;}
+      </style>
+      <!-- User CSS -->
+      <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+    </head>
+    <body>
+      <div id="nav"><div>Next: <a href='《Linux操作系统》实验6：Linux驱动实验.html'>《Linux操作系统》实验6：Linux驱动实验</a>, Previous: <a href='《Linux操作系统》实验4：内存管理.html'>《Linux操作系统》实验4：内存管理</a>, Up: <a href='index.html'>Index</a></div></div>
+      <div id="titlearea">
+        <h2>《Linux操作系统》实验5：磁盘和文件系统管理</h2>
+      </div>
+      <div id="contentarea"><div class="cell markdown-cell"><h3>一、实验目的</h3>
+<p>掌握Linux下磁盘管理命令以及文件系统装载命令的使用，理解inode索引节点。</p>
+<h3>二、实验内容</h3>
+<h4>I inode索引节点的作用</h4>
+<p>请查找资料，理解Linux下inode索引节点的作用，用图文方式描述在Linux下如何使用inode索引文件。</p>
+<h4>II 文件权限</h4>
+<ol>
+<li>假设当前登录的用户名为DEFAULT；</li>
+<li>使用useradd命令创建一个新的用户test，在创建用户时使用-m参数为其在/home目录下同时建立一个同名的目录；</li>
+<li>创建用户时可以同时设置一个密码，或是合适passwd命令为test用户设置一个密码；</li>
+<li>使用su test命令切换到test用户，并在/home/test目录下使用touch file命令创建一个0字节的文件file；</li>
+<li>使用ls -l命令查看文件的访问属性；</li>
+<li>在当前目录下再切换回之前的DEFAULT用户，再尝试修改该文件，检查是否会提示有权限错误，若有，请试着改变文件的访问属性来消除这个错误提示。</li>
+</ol>
+<h4>III 观察inode</h4>
+<ol>
+<li>切换回你的默认登录用户，在自己的目录下新建一个文件file1;</li>
+<li>使用ls -i命令观察file1的inode编号；</li>
+<li>使用stat file1命令观察file1的元数据，查找资料理解这些元数据的含义。</li>
+</ol>
+<h4>IV 硬连接</h4>
+<ol>
+<li>输入命令：<strong>ln file1 file1Hardlink</strong>，为file1文件创建一个硬连接，使用ls -il命令观察file1和file1Hardlink有什么联系；</li>
+<li>把“hello world”字符串写到file1文件中，然后再观察file1Hardlink文件有什么变化；</li>
+<li>将file1文件删除，再观察file1Hardlink文件内容有什么变化。</li>
+</ol>
+<h4>V 软连接</h4>
+<ol>
+<li>重新创建file1文件；</li>
+<li>输入命令：<strong>ln -s file1 file1Softlink</strong>，为file1文件创建一个软连接（符号连接），使用ls -il命令观察这两个文件有什么联系；</li>
+<li>把“hello world”字符串写到file1文件中，然后再观察file1Softlink文件有什么变化；</li>
+<li>将file1文件删除，再观察file1Softlink有什么变化。</li>
+</ol>
+<h3>四、实验要求</h3>
+<ol>
+<li>请用图文方式论述实验I；</li>
+<li>将实验II至实验V的每个步骤的输出截图；</li>
+<li>请查找资料，结合实验结果，论述硬连接和软连接的异同。</li>
+</ol>
+<hr>
+<p>特别提醒：只有输出结果使用截图，源代码请使用文字符号！</p>
+</div></div>
+      <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = '《Linux操作系统》实验6：Linux驱动实验.html';
+if (e.keyCode === 37) window.location.href = '《Linux操作系统》实验4：内存管理.html';
+}</script>
+    </body>
+    </html>
+  
